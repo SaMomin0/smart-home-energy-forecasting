@@ -128,8 +128,8 @@ $$\text{Instantaneous Power } (W) = \sum_{k=1}^{7} \text{Rated Watts}_k \times \
 ### 1. Clone & Install Dependencies
 
 ```bash
-git clone https://github.com/<your-username>/home-energy-forecasting.git
-cd home-energy-forecasting
+git clone https://github.com/SaMomin0/smart-home-energy-forecasting.git
+cd smart-home-energy-forecasting
 
 # Optional: Virtual environment
 python3 -m venv venv
