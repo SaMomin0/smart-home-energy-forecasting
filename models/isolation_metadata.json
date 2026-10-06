@@ -1,0 +1,24 @@
+{
+  "model_type": "IsolationForest",
+  "trained_at_utc": "2026-10-04T14:19:55.819850+00:00",
+  "total_samples": 7200,
+  "contamination": 0.05,
+  "n_estimators": 100,
+  "features": [
+    "power_w",
+    "temperature",
+    "humidity",
+    "occupancy",
+    "appliance_count",
+    "high_power_count",
+    "hour",
+    "total_appliance_power"
+  ],
+  "detected_anomalies_count": 360,
+  "detected_anomalies_pct": 5.0,
+  "score_range": {
+    "min": -0.0545,
+    "max": 0.1946,
+    "mean": 0.1222
+  }
+}

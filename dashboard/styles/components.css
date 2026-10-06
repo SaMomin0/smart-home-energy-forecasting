@@ -1,0 +1,558 @@
+/* ==========================================================================
+   Apple-Inspired Components - Ultra-Minimized, High-Density System
+   ========================================================================== */
+
+/* Universal Compact Glass Card Base */
+.apple-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.75rem 0.95rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.apple-card:hover {
+    border-color: var(--border-highlight);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ultra-Compact App Header */
+.app-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.85rem;
+    margin-bottom: 0.4rem;
+    background: var(--surface-glass);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    min-height: 44px;
+}
+
+.brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.brand-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.brand-subtitle {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.header-status-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Live Pulse Animation */
+.live-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(10, 147, 150, 0.25);
+    line-height: 1;
+}
+
+.live-pill.paused {
+    background: var(--warning-soft);
+    color: var(--warning);
+    border-color: rgba(238, 155, 0, 0.25);
+}
+
+.live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--success);
+    display: inline-block;
+    box-shadow: 0 0 6px var(--success);
+    animation: livePulse 2s infinite ease-in-out;
+}
+
+.live-pill.paused .live-dot {
+    background-color: var(--warning);
+    box-shadow: none;
+    animation: none;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 10px var(--success); }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Connection Pill */
+.conn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    line-height: 1;
+}
+
+.conn-pill.online {
+    color: var(--success);
+    border-color: rgba(10, 147, 150, 0.25);
+}
+
+.conn-pill.offline {
+    color: var(--danger);
+    border-color: rgba(174, 32, 18, 0.25);
+    background: var(--danger-soft);
+}
+
+/* Ultra-Compact KPI Cards */
+.kpi-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 66px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.kpi-card:hover {
+    border-color: var(--border-highlight);
+    box-shadow: var(--shadow-md);
+}
+
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.15rem;
+}
+
+.kpi-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.kpi-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.kpi-metric-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin: 0.1rem 0;
+}
+
+.kpi-metric-val {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.kpi-metric-unit {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.kpi-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.68rem;
+    color: var(--text-tertiary);
+    margin-top: 0.15rem;
+    line-height: 1;
+}
+
+.kpi-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.kpi-trend.up { color: var(--danger); }
+.kpi-trend.down { color: var(--success); }
+.kpi-trend.flat { color: var(--text-secondary); }
+
+/* Ultra-Compact Environmental Sensor Strip */
+.sensor-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.35rem 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    transition: all 0.2s ease;
+}
+
+.sensor-card:hover {
+    border-color: var(--border-highlight);
+}
+
+.sensor-icon-box {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.sensor-body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.sensor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.sensor-name {
+    font-size: 0.64rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}
+
+.sensor-val {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+}
+
+.sensor-sub {
+    font-size: 0.62rem;
+    color: var(--text-tertiary);
+    line-height: 1;
+}
+
+/* Severity Badges */
+.severity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.severity-badge.normal {
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(10, 147, 150, 0.25);
+}
+
+.severity-badge.warning {
+    background: var(--warning-soft);
+    color: var(--warning);
+    border: 1px solid rgba(238, 155, 0, 0.25);
+}
+
+.severity-badge.high {
+    background: var(--danger-soft);
+    color: var(--danger);
+    border: 1px solid rgba(174, 32, 18, 0.25);
+}
+
+.severity-badge.critical {
+    background: var(--critical-soft);
+    color: var(--critical);
+    border: 1px solid rgba(155, 34, 38, 0.35);
+}
+
+/* Status Chips */
+.status-chip {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+}
+
+.status-chip.online {
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(10, 147, 150, 0.25);
+}
+
+.status-chip.warning {
+    background: var(--warning-soft);
+    color: var(--warning);
+    border: 1px solid rgba(238, 155, 0, 0.25);
+}
+
+.status-chip.danger {
+    background: var(--danger-soft);
+    color: var(--danger);
+    border: 1px solid rgba(174, 32, 18, 0.25);
+}
+
+/* Section Header (Ultra-Compact) */
+.section-header-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.4rem 0 0.25rem 0;
+}
+
+.section-header-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Ultra-Dense Appliance Single-Row Grid */
+.appliance-grid-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.35rem;
+    margin: 0.25rem 0 0.45rem 0;
+}
+
+.appliance-card {
+    background: var(--surface-glass);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.35rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 52px;
+    transition: all 0.18s ease;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.appliance-card:hover {
+    border-color: var(--border-highlight);
+    background: var(--surface-elevated);
+}
+
+.appliance-card.active {
+    border-color: rgba(10, 147, 150, 0.35);
+    background: var(--surface-elevated);
+}
+
+.appliance-card.selected {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.appliance-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1;
+}
+
+.appliance-icon-box {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    flex-shrink: 0;
+}
+
+.appliance-state-pill {
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.1rem 0.35rem;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1;
+}
+
+.appliance-state-pill.on {
+    background: var(--success-soft);
+    color: var(--success);
+    border: 1px solid rgba(10, 147, 150, 0.25);
+}
+
+.appliance-state-pill.off {
+    background: var(--border-subtle);
+    color: var(--text-tertiary);
+    border: 1px solid transparent;
+}
+
+.appliance-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0.15rem 0 0.1rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.1;
+}
+
+.appliance-sub-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.2rem;
+    line-height: 1;
+}
+
+.appliance-power-active {
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.appliance-power-active.off {
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+.appliance-watts-badge {
+    font-size: 0.62rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+
+/* AI Diagnostics & Intelligence Card (High-Density) */
+.ai-intel-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 0.65rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.intel-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.74rem;
+}
+
+.intel-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.intel-val {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Metric chip */
+.metric-chip {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.15rem 0.45rem;
+    border-radius: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    line-height: 1.2;
+}
+
+/* Apple Tabs Styling */
+button[data-baseweb="tab"] {
+    padding: 0.35rem 0.85rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    color: var(--text-secondary) !important;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--accent) !important;
+    border-bottom-color: var(--accent) !important;
+}
+
+/* Streamlit button compact styling */
+div[data-testid="stButton"] button {
+    padding: 0.25rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    border-radius: 8px !important;
+    min-height: 32px !important;
+}

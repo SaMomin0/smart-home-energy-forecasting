@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "author": "AI for IoT Capstone Team",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 120,
+      "left": 130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ssd1306",
+      "id": "oled1",
+      "top": -40,
+      "left": 130,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -40,
+      "left": -60,
+      "attrs": { "temperature": "26.5", "humidity": "55.0" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -40,
+      "left": 310,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -40,
+      "left": 470,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_ac",
+      "top": 100,
+      "left": -120,
+      "attrs": { "color": "red", "label": "AC (1500W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_ac",
+      "top": 100,
+      "left": -50,
+      "attrs": { "color": "red", "label": "AC" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fan",
+      "top": 190,
+      "left": -120,
+      "attrs": { "color": "blue", "label": "FAN (75W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_fan",
+      "top": 190,
+      "left": -50,
+      "attrs": { "color": "blue", "label": "FAN" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_tv",
+      "top": 280,
+      "left": -120,
+      "attrs": { "color": "cyan", "label": "TV (120W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_tv",
+      "top": 280,
+      "left": -50,
+      "attrs": { "color": "cyan", "label": "TV" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_light",
+      "top": 370,
+      "left": -120,
+      "attrs": { "color": "yellow", "label": "LIGHT (20W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_light",
+      "top": 370,
+      "left": -50,
+      "attrs": { "color": "yellow", "label": "LIGHT" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_fridge",
+      "top": 100,
+      "left": 340,
+      "attrs": { "color": "green", "label": "FRIDGE" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_fridge",
+      "top": 100,
+      "left": 420,
+      "attrs": { "color": "green", "label": "FRIDGE (150W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_heater",
+      "top": 190,
+      "left": 340,
+      "attrs": { "color": "orange", "label": "HEATER" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_heater",
+      "top": 190,
+      "left": 420,
+      "attrs": { "color": "orange", "label": "HEATER (2000W)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_micro",
+      "top": 280,
+      "left": 340,
+      "attrs": { "color": "purple", "label": "MICRO" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_micro",
+      "top": 280,
+      "left": 420,
+      "attrs": { "color": "purple", "label": "MICRO (1000W)" }
+    }
+  ],
+  "connections": [
+    [ "esp:3V3", "dht1:VCC", "red", [ "v-20", "h-170" ] ],
+    [ "esp:D15", "dht1:SDA", "green", [ "v-30", "h-140" ] ],
+    [ "esp:GND.1", "dht1:GND", "black", [ "v-40", "h-120" ] ],
+
+    [ "esp:3V3", "oled1:VCC", "red", [ "v-30", "h0" ] ],
+    [ "esp:GND.1", "oled1:GND", "black", [ "v-35", "h-20" ] ],
+    [ "esp:D21", "oled1:SDA", "blue", [ "v-40", "h20" ] ],
+    [ "esp:D22", "oled1:SCL", "yellow", [ "v-45", "h30" ] ],
+
+    [ "esp:3V3", "ldr1:VCC", "red", [ "v-50", "h130" ] ],
+    [ "esp:GND.2", "ldr1:GND", "black", [ "v-55", "h120" ] ],
+    [ "esp:D34", "ldr1:AO", "orange", [ "v-60", "h90" ] ],
+
+    [ "esp:3V3", "pir1:VCC", "red", [ "v-50", "h290" ] ],
+    [ "esp:GND.2", "pir1:GND", "black", [ "v-55", "h280" ] ],
+    [ "esp:D13", "pir1:OUT", "purple", [ "v-60", "h240" ] ],
+
+    [ "esp:D32", "btn_ac:1.l", "red", [ "h-20", "v-80" ] ],
+    [ "esp:GND.2", "btn_ac:2.l", "black", [ "h-30", "v-80" ] ],
+    [ "esp:D23", "led_ac:A", "red", [ "h-60", "v-60" ] ],
+    [ "esp:GND.1", "led_ac:C", "black", [ "h-50", "v-60" ] ],
+
+    [ "esp:D33", "btn_fan:1.l", "blue", [ "h-20", "v-30" ] ],
+    [ "esp:GND.2", "btn_fan:2.l", "black", [ "h-30", "v-30" ] ],
+    [ "esp:D19", "led_fan:A", "blue", [ "h-60", "v-10" ] ],
+    [ "esp:GND.1", "led_fan:C", "black", [ "h-50", "v-10" ] ],
+
+    [ "esp:D25", "btn_tv:1.l", "cyan", [ "h-20", "v40" ] ],
+    [ "esp:GND.2", "btn_tv:2.l", "black", [ "h-30", "v40" ] ],
+    [ "esp:D18", "led_tv:A", "cyan", [ "h-60", "v60" ] ],
+    [ "esp:GND.1", "led_tv:C", "black", [ "h-50", "v60" ] ],
+
+    [ "esp:D26", "btn_light:1.l", "yellow", [ "h-20", "v110" ] ],
+    [ "esp:GND.2", "btn_light:2.l", "black", [ "h-30", "v110" ] ],
+    [ "esp:D5", "led_light:A", "yellow", [ "h-60", "v130" ] ],
+    [ "esp:GND.1", "led_light:C", "black", [ "h-50", "v130" ] ],
+
+    [ "esp:D27", "btn_fridge:1.l", "green", [ "h30", "v-80" ] ],
+    [ "esp:GND.2", "btn_fridge:2.l", "black", [ "h40", "v-80" ] ],
+    [ "esp:TX2", "led_fridge:A", "green", [ "h80", "v-60" ] ],
+    [ "esp:GND.2", "led_fridge:C", "black", [ "h70", "v-60" ] ],
+
+    [ "esp:D14", "btn_heater:1.l", "orange", [ "h30", "v-10" ] ],
+    [ "esp:GND.2", "btn_heater:2.l", "black", [ "h40", "v-10" ] ],
+    [ "esp:RX2", "led_heater:A", "orange", [ "h80", "v10" ] ],
+    [ "esp:GND.2", "led_heater:C", "black", [ "h70", "v10" ] ],
+
+    [ "esp:D12", "btn_micro:1.l", "purple", [ "h30", "v60" ] ],
+    [ "esp:GND.2", "btn_micro:2.l", "black", [ "h40", "v60" ] ],
+    [ "esp:D4", "led_micro:A", "purple", [ "h80", "v80" ] ],
+    [ "esp:GND.2", "led_micro:C", "black", [ "h70", "v80" ] ]
+  ],
+  "dependencies": {}
+}

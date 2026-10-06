@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run FastAPI Backend",
+            "type": "shell",
+            "command": "python3 -m uvicorn backend.api:app --host 0.0.0.0 --port 8000 --reload",
+            "problemMatcher": [],
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}"
+                }
+            }
+        },
+        {
+            "label": "Run Streamlit Dashboard",
+            "type": "shell",
+            "command": "python3 -m streamlit run dashboard/app.py --server.port 8501",
+            "problemMatcher": [],
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PYTHONPATH": "${workspaceFolder}"
+                }
+            }
+        },
+        {
+            "label": "Run MQTT Live Monitor",
+            "type": "shell",
+            "command": "python3 test_mqtt_subscriber.py",
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Run Interactive Virtual ESP32 Simulator",
+            "type": "shell",
+            "command": "python3 simulate_esp32_mqtt.py",
+            "problemMatcher": [],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

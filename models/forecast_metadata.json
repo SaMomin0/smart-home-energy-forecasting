@@ -1,0 +1,41 @@
+{
+  "model_type": "LinearRegression",
+  "model_role": "Short-Term Energy Forecasting (Model 2)",
+  "horizon": "next telemetry interval (2.5 seconds)",
+  "trained_at_utc": "2026-10-04T14:19:55.363270+00:00",
+  "total_samples": 7197,
+  "train_samples": 5757,
+  "test_samples": 1440,
+  "split_method": "Chronological (No Shuffle)",
+  "features": [
+    "power_lag_1",
+    "power_lag_2",
+    "power_lag_3",
+    "power_rolling_mean_3",
+    "power_trend_1_2",
+    "temperature",
+    "humidity",
+    "occupancy",
+    "hour",
+    "minute"
+  ],
+  "metrics": {
+    "mae_watts": 830.1128,
+    "rmse_watts": 1070.5809,
+    "r2_score": 0.214157
+  },
+  "coefficients": {
+    "power_lag_1": 0.0569,
+    "power_lag_2": 0.0609,
+    "power_lag_3": 0.0576,
+    "power_rolling_mean_3": 0.0585,
+    "power_trend_1_2": -0.004,
+    "temperature": 8.0214,
+    "humidity": -18.0574,
+    "occupancy": 743.8968,
+    "hour": -9.3681,
+    "minute": -0.8025
+  },
+  "intercept": 1474.0145,
+  "methodology_note": "Model 2 forecasts future household power based on historical measurements (t-1, t-2, t-3) and environmental context. No target data leakage exists because the current power is strictly excluded from input features."
+}

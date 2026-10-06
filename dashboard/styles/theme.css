@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Apple-Inspired Ultra-Minimized Design System - Global Theme & Variables
+   Palette:
+   Primary  : #080708, #FFFFFF
+   Secondary: #001219, #005F73, #0A9396, #94D2BD, #E9D8A6, #EE9B00, #CA6702,
+              #BB3E03, #AE2012, #9B2226, #FF9AA2, #FFB7B2, #FFDAC1, #E2F0CB,
+              #B5EAD7, #C7CEEA
+   ========================================================================== */
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+/* Light Theme Variables */
+body[data-theme="light"], .stApp[data-theme="light"], :root {
+    --bg-main: #FFFFFF;
+    --surface: #FFFFFF;
+    --surface-elevated: rgba(255, 255, 255, 0.95);
+    --surface-glass: rgba(245, 247, 248, 0.88);
+    --border: rgba(0, 18, 25, 0.08);
+    --border-subtle: rgba(0, 18, 25, 0.04);
+    --border-highlight: rgba(0, 18, 25, 0.20);
+    
+    --text-primary: #080708;
+    --text-secondary: #005F73;
+    --text-tertiary: #6E7B82;
+    
+    --accent: #0A9396;
+    --accent-soft: rgba(10, 147, 150, 0.12);
+    --accent-hover: #005F73;
+    
+    --success: #0A9396;
+    --success-soft: rgba(148, 210, 189, 0.25);
+    --warning: #EE9B00;
+    --warning-soft: rgba(238, 155, 0, 0.15);
+    --danger: #AE2012;
+    --danger-soft: rgba(174, 32, 18, 0.15);
+    --critical: #9B2226;
+    --critical-soft: rgba(155, 34, 38, 0.18);
+    --info: #005F73;
+    --info-soft: rgba(0, 95, 115, 0.12);
+
+    /* Apple-Grade Secondary Accents */
+    --color-petrol: #001219;
+    --color-teal-dark: #005F73;
+    --color-teal: #0A9396;
+    --color-sage: #94D2BD;
+    --color-cream: #E9D8A6;
+    --color-amber: #EE9B00;
+    --color-ochre: #CA6702;
+    --color-rust: #BB3E03;
+    --color-crimson: #AE2012;
+    --color-maroon: #9B2226;
+    --color-rose: #FF9AA2;
+    --color-peach: #FFB7B2;
+    --color-apricot: #FFDAC1;
+    --color-pistachio: #E2F0CB;
+    --color-mint: #B5EAD7;
+    --color-lavender: #C7CEEA;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 18, 25, 0.04);
+    --shadow-md: 0 3px 12px rgba(0, 18, 25, 0.06);
+    --shadow-glass: 0 4px 20px 0 rgba(0, 18, 25, 0.06);
+}
+
+/* Dark Theme Variables */
+body[data-theme="dark"], .stApp[data-theme="dark"], .theme-dark {
+    --bg-main: #080708;
+    --surface: #001219;
+    --surface-elevated: rgba(0, 18, 25, 0.95);
+    --surface-glass: rgba(0, 18, 25, 0.78);
+    --border: rgba(148, 210, 189, 0.14);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --border-highlight: rgba(148, 210, 189, 0.32);
+    
+    --text-primary: #FFFFFF;
+    --text-secondary: #94D2BD;
+    --text-tertiary: #7D8E95;
+    
+    --accent: #0A9396;
+    --accent-soft: rgba(10, 147, 150, 0.22);
+    --accent-hover: #94D2BD;
+    
+    --success: #94D2BD;
+    --success-soft: rgba(148, 210, 189, 0.18);
+    --warning: #EE9B00;
+    --warning-soft: rgba(238, 155, 0, 0.22);
+    --danger: #AE2012;
+    --danger-soft: rgba(174, 32, 18, 0.25);
+    --critical: #9B2226;
+    --critical-soft: rgba(155, 34, 38, 0.30);
+    --info: #005F73;
+    --info-soft: rgba(0, 95, 115, 0.25);
+
+    /* Apple-Grade Secondary Accents */
+    --color-petrol: #001219;
+    --color-teal-dark: #005F73;
+    --color-teal: #0A9396;
+    --color-sage: #94D2BD;
+    --color-cream: #E9D8A6;
+    --color-amber: #EE9B00;
+    --color-ochre: #CA6702;
+    --color-rust: #BB3E03;
+    --color-crimson: #AE2012;
+    --color-maroon: #9B2226;
+    --color-rose: #FF9AA2;
+    --color-peach: #FFB7B2;
+    --color-apricot: #FFDAC1;
+    --color-pistachio: #E2F0CB;
+    --color-mint: #B5EAD7;
+    --color-lavender: #C7CEEA;
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 3px 12px rgba(0, 0, 0, 0.5);
+    --shadow-glass: 0 6px 24px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Background Application */
+.stApp {
+    background-color: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Ultra-Minimized Streamlit Padding */
+header[data-testid="stHeader"] {
+    display: none !important;
+    height: 0 !important;
+}
+
+footer {
+    display: none !important;
+}
+
+.block-container {
+    padding-top: 0.5rem !important;
+    padding-bottom: 1.0rem !important;
+    padding-left: 1.0rem !important;
+    padding-right: 1.0rem !important;
+    max-width: 100% !important;
+}
+
+/* Reduce Streamlit element vertical margins */
+div[data-testid="stVerticalBlock"] > div {
+    gap: 0.35rem !important;
+}
+
+div[data-testid="stHorizontalBlock"] {
+    gap: 0.5rem !important;
+}
+
+hr {
+    margin: 0.5rem 0 !important;
+    border-color: var(--border-subtle) !important;
+}
